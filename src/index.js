@@ -83,8 +83,12 @@ const gasoline = [
 ]
 
 // Add two line series.
-const lineSeries = chart.addLineSeries().setName('Diesel')
-const lineSeries2 = chart.addLineSeries().setName('Gasoline')
+const lineSeries = chart.addLineSeries(
+        {automaticColorIndex: 0},
+).setName('Diesel')
+const lineSeries2 = chart.addLineSeries(
+    {automaticColorIndex: 4},
+).setName('Gasoline')
 
 // Add the points to each Series
 lineSeries2.appendJSON(diesel)
@@ -92,4 +96,3 @@ lineSeries.appendJSON(gasoline)
 
 // Setup view nicely.
 chart.axisY.setTitle('Price').setUnits('$/litre').setInterval({ start: 0, end: 3, stopAxisAfter: true })
-
